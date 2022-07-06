@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting="Las mejores camisetas!"/>
+      <ItemListContainer $primary greeting="Las mejores camisetas!"/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
