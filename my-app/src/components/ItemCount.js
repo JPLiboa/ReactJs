@@ -18,7 +18,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
           onAdd(count)
         }
         else {
-          alert ("No hay suficientes productos");
+          alert (`No hay suficientes productos`);
         }
       }}
       >Agregar al carrito</button>
