@@ -12,7 +12,6 @@ const ItemList = ({items}) => {
       description={description}
       category={category}
       image={image}
-      key={id}
       />  
       ))}
     </div>

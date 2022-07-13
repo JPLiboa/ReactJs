@@ -21,7 +21,7 @@ const ItemListContainer = ({greeting}) => {
       onAdd={(onAddCallback)}
       />
       
-      <ItemList item={[]} /> 
+      <ItemList items={products} /> 
     </div>
   );
 };
