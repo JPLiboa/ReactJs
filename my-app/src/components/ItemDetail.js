@@ -24,7 +24,7 @@ function ItemDetail ({item}) {
         <div className='card w-10/12 m-auto flex flex-row flex-wrap justify-center bg-base-100 shadow-xl'>
 
                 <div id="imagenProducto" >
-                    <img src={item.image} className="m-auto h-4/6 max-h-full md:max-h-screen" alt="Album"/>
+                    <img src={item.image} className="m-auto h-4/6 max-h-full md:max-h-screen" alt="Camiseta"/>
                 </div>
             
             <div className="text-center w-6/12">

@@ -1,7 +1,9 @@
+import './App.css';
 import logo from './logo.svg';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-import './App.css';
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import { BrowserRouter,Outlet, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -25,6 +27,22 @@ function App() {
       </header>
     </div>
   );
-}
+
+  /*<BrowserRouter>
+      <div>
+        <div className="App">
+        <NavBar/>
+        </div>
+          <Outlet/>
+        </div>
+      <Routes>
+        <Route path="/" element={<div className='flex-row flex-wrap'><ItemListContainer/></div>} />
+        <Route path="/category/:nombreCategoria" element={<div className='flex-row flex-wrap'><ItemListContainer/></div>} />
+        <Route path="/producto/:Item" element={<ItemDetailContainer/>} />
+      </Routes>
+      
+    </BrowserRouter>*/
+
+  }
 
 export default App;
