@@ -2,11 +2,18 @@ import React from 'react';
 
 const Item = ({ id,title,description,price,image}) => {
   return (
+   
+   
+   
+
+  <div class="container">
+  <div class="row">
+    <div class="col">
+    <main id= "items" className= "row g-3"></main>      
+    <div className="card col-sm-3">
+    <div className= "card-body">  
+     
     
-    
-    <div className="container">
-    <div className="row row-cols-2, col-lg-4">
-    <div  className="border border-5, rounded, img-thumbnail" >   
       
       <h3 className="card-title">{title}</h3>
       <img src= {image} width="250"  className="my-6" alt={title} />
@@ -20,8 +27,8 @@ const Item = ({ id,title,description,price,image}) => {
     </div>
     </div>
     </div>
-
-    
+    </div>
+    </div>
   );
 };
 

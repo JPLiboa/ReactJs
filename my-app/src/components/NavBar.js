@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import CardWidget from "./CardWidget";
 const NavBar = () => {
     return <div>
@@ -22,7 +23,6 @@ const NavBar = () => {
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a className="dropdown-item" href="/">19/20</a></li>
             <li><a className="dropdown-item" href="/">20/21</a></li>
-            <li><hr className="dropdown-divider"></hr></li>
             <li><a className="dropdown-item" href="/">21/22</a></li>
           </ul>
         </li>
@@ -36,6 +36,7 @@ const NavBar = () => {
     </div>
   </div>
 </nav>
+ 
     </div>
 };
 export default NavBar;

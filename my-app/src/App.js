@@ -10,7 +10,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting="Las mejores camisetas!"/>
+      
+      <ItemListContainer greeting= "Las mejores camisetas!"/>
+      
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -40,7 +42,7 @@ function App() {
         <Route path="/category/:nombreCategoria" element={<div className='flex-row flex-wrap'><ItemListContainer/></div>} />
         <Route path="/producto/:Item" element={<ItemDetailContainer/>} />
       </Routes>
-      
+        <div> footer </div>
     </BrowserRouter>*/
 
   }
