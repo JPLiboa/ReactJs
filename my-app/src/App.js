@@ -42,7 +42,7 @@ function App() {
         <Route path="/category/:nombreCategoria" element={<div className='flex-row flex-wrap'><ItemListContainer/></div>} />
         <Route path="/producto/:Item" element={<ItemDetailContainer/>} />
       </Routes>
-        <div className='card text-center'> Camisetas JP  - RRHH </div>
+        <div className='card text-center'> JP Store  - RRHH </div>
     </BrowserRouter>
   )};
 

@@ -4,7 +4,9 @@ import Item from './Item'
 
 const ItemList = ({items}) => {
   return (
-    <div className="flex flex-row flex-wrap gap-2 justify-evenly mt-24 ">
+    <div class="container text-center">
+    <div className="row row-cols-3">
+      
       {items.map(( {id, title, price, description, category, image}) => (
       <Item
       
@@ -16,6 +18,7 @@ const ItemList = ({items}) => {
       image={image}
       />  
       ))}
+    </div>
     </div>
   );
 };

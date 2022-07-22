@@ -19,8 +19,8 @@ const ItemDetailContainer = () => {
     })}, [Item]);
   
   return (
-    <div>
-      {loading ? (<h2>CARGANDO...</h2>) : (<ItemDetail item={data}/>)}
+    <div className='d-grid gap-3'>
+      {loading ? (<div className='color: $light-300'><h2> CARGANDO..</h2></div>) : (<ItemDetail item={data}/>)}
     </div>
   )
 }

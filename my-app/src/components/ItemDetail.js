@@ -24,12 +24,12 @@ function ItemDetail ({item}) {
 
         <div className='card w-10/12 m-auto flex flex-row flex-wrap justify-center bg-base-100 shadow-xl'>
 
-                <div id="imagenProducto" >
-                    <img src={item.image} className="my-6" width="250" alt="Album"/>
+                <div  id="imagenProducto" className='rounded mx-auto d-block' >
+                    <img src={item.image} className='justify-center' width="350" alt="Album"/>
                 </div>
-            
-            <div className="text-center w-6/12">
-                <h1 className="card-title justify-center m-auto text-5xl p-10">{item.title}</h1>
+            <hr></hr>
+            <div className="text-center">
+                <h1 className="card-title justify-center">{item.title}</h1>
                 <hr></hr>
                 <p className='text-center justify-center m-auto text-xl p-10'>{item.description}</p>
                 <hr></hr>
