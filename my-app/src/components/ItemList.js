@@ -1,11 +1,12 @@
 import React from 'react'
 import Item from './Item'
-import ItemListContainer from './ItemListContainer'
+
 
 const ItemList = ({items}) => {
   return (
-    <div>
-      {items.map(( {id, title, price, description, category, image}) => (<Item
+    <div className="flex flex-row flex-wrap gap-2 justify-evenly mt-24 ">
+      {items.map(( {id, title, price, description, category, image}) => (
+      <Item
       
       id={id}
       title={title}

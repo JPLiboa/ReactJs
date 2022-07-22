@@ -8,7 +8,7 @@ import { BrowserRouter,Outlet, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    /*<div className="App">
       <NavBar />
       
       <ItemListContainer greeting= "Las mejores camisetas!"/>
@@ -28,9 +28,9 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  );*/
 
-  /*<BrowserRouter>
+  <BrowserRouter>
       <div>
         <div className="App">
         <NavBar/>
@@ -42,9 +42,8 @@ function App() {
         <Route path="/category/:nombreCategoria" element={<div className='flex-row flex-wrap'><ItemListContainer/></div>} />
         <Route path="/producto/:Item" element={<ItemDetailContainer/>} />
       </Routes>
-        <div> footer </div>
-    </BrowserRouter>*/
-
-  }
+        <div className='card text-center'> Camisetas JP  - RRHH </div>
+    </BrowserRouter>
+  )};
 
 export default App;
