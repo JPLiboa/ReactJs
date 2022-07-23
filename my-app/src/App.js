@@ -4,32 +4,12 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter,Outlet, Routes, Route } from "react-router-dom";
+import { CartProvider } from './context/CartContext';
 
 
 function App() {
   return (
-    /*<div className="App">
-      <NavBar />
-      
-      <ItemListContainer greeting= "Las mejores camisetas!"/>
-      
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );*/
-
+    <CartProvider>
   <BrowserRouter>
       <div>
         <div className="App">
@@ -44,6 +24,7 @@ function App() {
       </Routes>
         <div className='card text-center'> JP Store  - RRHH </div>
     </BrowserRouter>
+    </CartProvider>
   )};
 
 export default App;

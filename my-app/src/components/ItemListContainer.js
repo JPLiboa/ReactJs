@@ -7,7 +7,7 @@ import {useParams } from "react-router-dom";
   
 
 
-const ItemListContainer = ({}) => {
+const ItemListContainer = () => {
   let {nombreCategoria} = useParams()
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
@@ -34,29 +34,7 @@ const ItemListContainer = ({}) => {
     </div>
   
 
-  /*const [list, setList] = useState([])
-  const [isLoading, setIsLoading]= useState(true);
-  const asyncMock = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(  setList(products) );
-    }, 2000);
-  });
-  
-  function onAddCallback(n){
-    alert ("agregados los productos ");
-  };
-  return (
-    <div >
-      {greeting}
-      <ItemCount 
-      stock={5} 
-      initial={1} 
-      onAdd={(onAddCallback)}
-      />
-      
-      <ItemList items={list} /> 
-      {isLoading ? <span>CARGANDO...</span> : <Item items ={products} />}
-    </div>*/
+ 
   );
 }; 
 

@@ -1,23 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ItemCount from './ItemCount';
 import { useState } from "react";
 import { Link, NavLink} from "react-router-dom";
+import CartContext from '../context/CartContext';
 
 
 function ItemDetail ({item}) {
 
     const [sendStatus, setsendSatus] = useState(false)
-    console.log(sendStatus)
+    const {addItem} = useContext(CartContext)
 
     function onAddEvent(n) {
 
         setsendSatus(true)
 
-        alert (`AGREGASTE AL CARRITO:
+        function onAddEvent(n) {
+            setsendSatus(true)
+            addItem({...item, quantity: n});
+        }
+        /*alert (`AGREGASTE AL CARRITO:
                 Producto: ${item.title}
                 Precio: ${item.price}
                 Cantidad Agregada: ${n}
-                Monto Total = ${n*item.price}`)
+                Monto Total = ${n*item.price}`)*/
     }
 
     return (
@@ -25,7 +30,7 @@ function ItemDetail ({item}) {
         <div className='card w-10/12 m-auto flex flex-row flex-wrap justify-center bg-base-100 shadow-xl'>
 
                 <div  id="imagenProducto" className='rounded mx-auto d-block' >
-                    <img src={item.image} className='justify-center' width="350" alt="Album"/>
+                    <img src={item.image} className='justify-center' width="250" alt="Album"/>
                 </div>
             <hr></hr>
             <div className="text-center">

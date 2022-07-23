@@ -1,9 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import CardWidget from "./CardWidget";
+import { useContext } from "react";
+import CartContext from "../context/CartContext";
 
 
 
 const NavBar = () => {
+
+  const context = useContext(CartContext)
     return (
     <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,20 +19,13 @@ const NavBar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
+          <NavLink to="/category/clothes"className="nav-link active">Clothes</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">Sale!</a>
+          <NavLink to="/category/electronics" className="nav-link active">Electronics</NavLink>
         </li>
         <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Temporadas
-          </a>
-          <a></a>
-            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="/">19/20</a></li>
-            <li><a className="dropdown-item" href="/">21/22</a></li>
-          </ul>
+          <NavLink to="/category/jewelery" className="nav-link active">Jewelery</NavLink>
         </li>
         
       </ul>

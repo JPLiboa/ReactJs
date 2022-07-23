@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const ItemCount = ({stock, initial, onAdd}) => {
+function ItemCount  ({stock, initial, onAdd}) {
     const [count, setCount]= useState (initial);
 
     const incrementar = () =>{
@@ -15,21 +15,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
       return (count, decrementar)
     };
   return (
-   /*<div>
-      <h3>{count}</h3>
-      <button onClick={decrementar}>-</button>
-      <button onClick={incrementar}>+</button>
-      <button onClick={() =>{
-        if (count <= stock){
-          onAdd(count)
-        }
-        else {
-          alert (`No hay suficientes productos`);
-        }
-      }}
-      >Agregar al carrito</button>
-    </div>*/
-   
     <div className="w-64">
     <div className="card-actions justify-around items-center mb-4">
       <button className="btn btn-circle bg-primary btn-sm" onClick={() => incrementar()}>+</button>
