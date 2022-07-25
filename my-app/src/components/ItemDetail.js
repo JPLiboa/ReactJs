@@ -10,14 +10,12 @@ function ItemDetail ({item}) {
     const [sendStatus, setsendSatus] = useState(false)
     const {addItem} = useContext(CartContext)
 
-    function onAddEvent(n) {
-
-        setsendSatus(true)
+    
 
         function onAddEvent(n) {
             setsendSatus(true)
             addItem({...item, quantity: n});
-        }
+        
         /*alert (`AGREGASTE AL CARRITO:
                 Producto: ${item.title}
                 Precio: ${item.price}
@@ -38,10 +36,11 @@ function ItemDetail ({item}) {
                 <hr></hr>
                 <p className='text-center justify-center m-auto text-xl p-10'>{item.description}</p>
                 <hr></hr>
-                <p className='text-center justify-center m-auto text-xl  p-10 font-bold'>Precio ${item.price}</p>
+                <p className='text-center justify-center m-auto text-xl  p-20 font-italic'>Precio ${item.price}</p>
                 <hr></hr>
                 <div className='flex flex-col'>
                     {sendStatus ? <NavLink to = "/card" className="btn btn-primary bg-primary w-24 mx-auto">Ver Carrito</NavLink> : <div className="card-actions justify-center"><ItemCount stock = {5} initial = {1} onAdd ={(n) => onAddEvent(n)}/></div>}
+                    <div></div>
                     <Link to={"/"}><button className="btn btn-accent w-24 my-5">Volver</button></Link>
                 </div>
             </div>
