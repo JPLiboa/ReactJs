@@ -17,7 +17,7 @@ const CartWidget = () => {
                 </label>
                 <div tabindex="0" class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
                     <div class="card-body">
-                        <span class="font-bold text-lg">{totalItems} Items</span>
+                        <span class="font-weight-bolder">{totalItems} Items</span>
                         <span class="text-info">Subtotal: ${totalPrice}</span>
                         <div class="card-actions flex justify-center">
                         <Link to="/cart"><button class=" px-25 btn btn-primary btn-block w-24  ">Ver carro</button></Link>

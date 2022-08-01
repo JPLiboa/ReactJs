@@ -4,7 +4,7 @@ import ItemList from './ItemList';
 import products from './products.json';
 import Item from './Item';
 import {useParams } from "react-router-dom";
-  
+import { getItems, getItemsFiltered } from '../firebase.js';
 
 
 const ItemListContainer = () => {
@@ -15,7 +15,16 @@ const ItemListContainer = () => {
     
 
     useEffect(() => {
-        fetch(nombreCategoria === undefined ? 'https://fakestoreapi.com/products' : 'https://fakestoreapi.com/products/category/'+ nombreCategoria )
+      /*(nombreCategoria === undefined ? (getItems()) : getItemsFiltered(nombreCategoria)).then((snapshot) => {
+        setProducts(
+          snapshot.docs.map((document) => ({
+            ...document.data(),
+          }))
+        );
+        setTimeout(setLoading,2000,false);
+      });
+    }, [nombreCategoria]);*/
+    fetch(nombreCategoria === undefined ? 'https://fakestoreapi.com/products' : 'https://fakestoreapi.com/products/category/'+ nombreCategoria )
           .then((res) => res.json())
           .then((json) => {
             setTimeout(setLoading,2000,false);
