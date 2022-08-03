@@ -8,25 +8,15 @@ import { sendOrder } from "../firebase.js"
 
 function Cart() {
 
-  const { cart, clearAll, totalItems, totalPrice } = useContext(CartContext)
-  const [idOrder, setIdOrder] = useState("")
+  const { cart, clearAll, totalPrice } = useContext(CartContext)
+  
 
-  const placeOrder = () =>  {
-    console.log("Se sube la orden")
-    sendOrder(cart, totalPrice)
-    setIdOrder("Test")
-  }
+  
 
   return (
 
     <section>
-      {cart.length > 0 &&
-        <div className="flex mx-auto w-8/12 mt-10 mb-10 font-weight-bolder">
-          <div >Total items: {totalItems}</div>
-          
-          <div className=" place-items-center shadow-xl">Precio total ${totalPrice}</div>
-        </div>}
-      <div className="flex flex-column flex-wrap gap-3 w-4/5 m-auto justify-around">
+    <div className="flex flex-column flex-wrap gap-3 w-4/5 m-auto justify-around">
         {cart.map((item) => (
           <CartItem
             title={item.title}
@@ -43,24 +33,17 @@ function Cart() {
 
         {cart.length > 0 ? 
         <div>
-          <button className="btn btn-primary w-48 mr-10" onClick={placeOrder}>Cerrar Pedido</button>
-            <button className="btn btn-primary w-48" onClick={clearAll}>COMPRAR PRODUCTOS</button>
-            
-            {idOrder !== "" &&
-            <div className="mt-10 alert alert-success shadow-lg w-8/12 m-auto">
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLineCap="round" strokeLineJoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                <span>Tu orden fue realizada. Orden ID : {idOrder} </span>
-              </div>
-            </div>
-            }
+          <Link to="../checkout">
+              <button className="btn btn-primary btn-block w-48 mr-10">Finalizar compra</button>
+            </Link>
+            <button className="btn btn-primary w-48" onClick={clearAll}>Vaciar</button>
 
           </div>
           :
           <div>
-            <h1 className='mb-10'>Vaciar</h1>
+            <h1 className='mb-10'>EMPTY CART</h1>
             <Link to="../">
-              <button className="btn btn-primary btn-block w-48">Ver productos</button>
+              <button className="btn btn-primary btn-block w-48">VIEW PRODUCTS</button>
             </Link>
           </div>
         }

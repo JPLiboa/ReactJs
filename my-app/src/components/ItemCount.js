@@ -5,7 +5,7 @@ function ItemCount  ({stock, initial, onAdd}) {
 
     const incrementar = () =>{
          if (count < stock) {setCount(count+1)}
-            else {alert("Stock insuficiente")}
+            else {alert("No hay stock suficiente")}
 
         return (count, incrementar)
     };
