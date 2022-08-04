@@ -20,7 +20,7 @@ const Item = ({ id,title,description,price,image}) => {
             </div>
             <p className="card-text">${price}</p>      
             <div >
-            <Link to={"/producto/"+id}><button className="btn btn-primary bg-primary w-100% mb-4">Ver Detalles</button></Link>            
+            <Link to={"/producto/"+id}><button className="btn btn-info bg-info w-100% mb-4 border border-dark ">Ver Detalles</button></Link>            
             </div>
       </div>
       </div>

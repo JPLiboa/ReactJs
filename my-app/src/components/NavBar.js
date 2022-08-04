@@ -32,10 +32,7 @@ const NavBar = () => {
         
       </ul>
       
-        <input  type="search" placeholder="Search" aria-label="Search" type="text"
-            
-            className="input input-bordered w-96"></input>
-        <button className="btn btn-outline-success" type="submit">Buscar</button>
+       
         
         <CartWidget />
     </div>

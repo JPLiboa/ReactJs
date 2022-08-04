@@ -17,12 +17,14 @@ const CartWidget = () => {
                 </label>
                 <div tabindex="0" class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
                     <div class="card-body">
-                        <span class="font-weight-bolder">{totalItems} Items</span>
-                        <span class="text-info">Subtotal: ${totalPrice}</span>
+                        <span class="font-weight-bolder lead">{totalItems} Items</span>
+                        <hr></hr>
+                        <span class="text-primary-bold lead">Subtotal: ${totalPrice}</span>
+                        <hr></hr>
                         <div class="card-actions flex justify-center">
-                        <Link to="/cart"><button class=" px-25 btn btn-primary btn-block w-24  ">Ver carro</button></Link>
+                        <Link to="/cart"><button class=" px-25 btn btn-info btn-block w-24  ">Ver carrito</button></Link>
                        
-                        <btn class="btn btn-danger btn-block w-24" onClick={clearAll}>Vaciar carro</btn>
+                        <btn class="btn btn-danger btn-block w-24" onClick={clearAll}>Vaciar carrito</btn>
                         </div>
                     </div>
                 </div>

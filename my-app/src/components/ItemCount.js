@@ -16,13 +16,13 @@ function ItemCount  ({stock, initial, onAdd}) {
     };
   return (
     <div className="w-64">
-    <div className="card-actions justify-around items-center mb-4">
-      <button className="btn btn-circle bg-primary btn-sm" onClick={() => incrementar()}>+</button>
-      <p className="font-bold text-2xl text-center">{count}</p>
-      <button className="btn btn-circle bg-primary btn-sm" onClick={() => decrementar()}>-</button>
+    <div className="card-actions justify-around items-center mb-4 ">
+      <button className="btn btn-circle bg-info btn-sm border border-dark" onClick={() => incrementar()}>+</button>
+      <p className="font-bold text-2xl text-center lead d-inline p-2 text-bg-primary w-25 p-4 ">{count}</p>
+      <button className="btn btn-circle bg-info btn-sm border border-dark" onClick={() => decrementar()}>-</button>
     </div>
     <div className="card-actions justify-center">
-      <button className="btn btn-primary bg-primary w-9/12" onClick={() => onAdd(count)}>Agregar Al Carrito</button>
+      <button className="btn btn-dark bg-info w-9/12 border border-dark" onClick={() => onAdd(count)}>Agregar Al Carrito</button>
     </div>
   </div>
   

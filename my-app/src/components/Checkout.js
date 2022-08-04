@@ -37,8 +37,8 @@ return (
     {idOrden !== "" &&
       <div className="mt-10 alert alert-success shadow-lg w-8/12 m-auto">
         <div>
-          <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <span>Your order has been placed. Order ID : {idOrden} </span>
+          
+          <span>Su orden fue confirmada con el numero de ID : {idOrden} </span>
         </div>
       </div>
     }
@@ -49,13 +49,13 @@ return (
         <div className="divider divider-horizontal"></div>
         <div className="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center shadow-xl">TOTAL ${totalPrice}</div>
       </div>}
-    <div className='mt-10 text-center'>
+    <div className='mt-10 text-left'>
 
       <Form/>
 
 
-      <div>
-        <button className="btn btn-primary w-48 mr-10" onClick={placeOrder}>Confirmar pedido</button>
+      <div className='mt-10 text-center'>
+        <button className="btn btn-primary w-48 mr-10 " onClick={placeOrder}>Confirmar pedido</button>
         <Link to="../">
           <button className="btn btn-primary btn-block w-48">Vuelve al Store</button>
         </Link>
