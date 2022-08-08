@@ -1,6 +1,6 @@
 
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+
 import {doc, addDoc, getDoc, getDocs, getFirestore, collection, query, where } from "firebase/firestore";
 
 
@@ -22,14 +22,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export const getDetailItem = (id) => {
-  const docRef = doc(db, 'Products', id); 
+  const docRef = doc(db, 'items', id); 
   return getDoc(docRef);
 };
 
 
 
 export const getItems = () => {
-    const colRef = collection(db, 'Products'); 
+    const colRef = collection(db, 'items'); 
     const q = query(colRef);
     return getDocs(q);
   };
@@ -37,12 +37,12 @@ export const getItems = () => {
   
 
 export const getItemsFiltered = (categ) => {
-    const colRef = query(collection(db, 'Products')) 
+    const colRef = query(collection(db, 'items')) 
     const q = query(colRef, where("category", "==", categ));
     return getDocs(q);
   };
 
-  export const sendOrder = (items,total) => {
+  /*export const sendOrder = (items,total) => {
     const order = {
       buyer: {name: "Juan", phone: "+54114856987", email: "liboajp@gmail.com"},
       items,
@@ -50,4 +50,10 @@ export const getItemsFiltered = (categ) => {
     }
     const ordersCollection = collection(db,"orders")
     addDoc(ordersCollection, order).then(({id}) => console.log(id));
-  }
+  }*/
+
+  export const getOrderById = (id) => {
+    const docRef = doc(db, 'orders', id) 
+    return getDoc(docRef);
+  };
+

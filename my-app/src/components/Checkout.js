@@ -1,24 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, clearAll, Cart } from 'react'
 import { useContext } from "react";
 import { Link } from 'react-router-dom';
 import CartContext from '../context/CartContext';
 import Form from './Form';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, Timestamp, setDoc, addDoc,  } from 'firebase/firestore';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 
 
-function Cart() {
+function Checkout() {
 
   const { cart, totalItems, totalPrice } = useContext(CartContext)
-  const [idOrden, setIdOrden] = useState("")
+  const [userData, setUserData] = useState({name: '', phone: '', email: '', repEmail: ''});
+  const MySwal = withReactContent(Swal)
+
+  const notif = (id) =>  MySwal.fire({
+    title: <strong>Order Placed!</strong>,
+    html: <i>Your order Id is {id}</i>,
+    icon: 'success'
+     })  
+
+  const handleChange = (event) => {
+    setUserData({
+        ...userData,
+        [event.target.name]: event.target.value
+    });
+}
 
 
-  const placeOrder = () => {
-    const fecha = new Date();
-    const fechaOrden = `${fecha.getDate()}/${fecha.getMonth() + 1}/${fecha.getFullYear()}`;
-
+  const placeOrder = (e) => {
+    e.preventDefault()
+    const fechaOrden = Timestamp.fromDate(new Date())
     const order = {
-      buyer: { name: "Martin", phone: "+542954328298", email: "tincho_mondino@hotmail.com" },
+      buyer: userData,
       cart,
       totalPrice,
       fechaOrden
@@ -26,7 +41,15 @@ function Cart() {
 
     const db = getFirestore();
     const ordersCollection = collection(db, "orders")
-    addDoc(ordersCollection, order).then(doc => setIdOrden(doc.id));
+    addDoc(ordersCollection, order).then((doc) => {
+      notif(doc.id)
+      setDoc(doc ,{id: doc.id}, {merge: true})
+      })
+    .catch(err => console.log(err))
+    .finally(()=> {
+      clearAll();
+      setUserData({name: "", phone: "", email: "", repEmail: ""})}
+      );
 
 }
 
@@ -34,14 +57,7 @@ return (
 
   <section>
 
-    {idOrden !== "" &&
-      <div className="mt-10 alert alert-success shadow-lg w-8/12 m-auto">
-        <div>
-          
-          <span>Su orden fue confirmada con el numero de ID : {idOrden} </span>
-        </div>
-      </div>
-    }
+    
 
     {cart.length > 0 &&
       <div className="flex mx-auto w-8/12 mt-10 mb-10 font-bold">

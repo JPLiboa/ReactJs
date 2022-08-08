@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import ItemCount from './ItemCount';
 import ItemList from './ItemList';
-import products from './products.json';
 import Item from './Item';
 import {useParams } from "react-router-dom";
 import { getItems, getItemsFiltered } from '../firebase.js';
+import PropagateLoader from "react-spinners/ClipLoader";
 
 
 const ItemListContainer = () => {
@@ -15,7 +15,7 @@ const ItemListContainer = () => {
     
 
     useEffect(() => {
-      /*(nombreCategoria === undefined ? (getItems()) : getItemsFiltered(nombreCategoria)).then((snapshot) => {
+      (nombreCategoria === undefined ? (getItems()) : getItemsFiltered(nombreCategoria)).then((snapshot) => {
         setProducts(
           snapshot.docs.map((document) => ({
             ...document.data(),
@@ -23,29 +23,31 @@ const ItemListContainer = () => {
         );
         setTimeout(setLoading,2000,false);
       });
-    }, [nombreCategoria]);*/
-    fetch(nombreCategoria === undefined ? 'https://fakestoreapi.com/products' : 'https://fakestoreapi.com/products/category/'+ nombreCategoria )
+    }, [nombreCategoria]);
+    /*fetch(nombreCategoria === undefined ? 'https://fakestoreapi.com/products' : 'https://fakestoreapi.com/products/category/'+ nombreCategoria )
           .then((res) => res.json())
           .then((json) => {
             setTimeout(setLoading,2000,false);
             setProducts(json);
           })
           .catch(() => {
-            alert('Ocurrio un error inesperado');
+            alert('Ocurrio un error');
           });
-      }, [products]);
+      }, [products]);*/
 
-    return (<div>
-        <div>
-            {loading ? (<h3>CARGANDO</h3>) : (<ItemList items={products}/>)}
-            
-        </div>
-    </div>
-  
-
- 
-  );
-}; 
+      return (
+        <div className="mt-10 flex justify-center">
+          <div>
+              {loading ? 
+              <div className="grid mt-5 mx-auto" >
+                <PropagateLoader color={"192BD1"} loading={loading} size={50} /> 
+              </div>
+              : (<ItemList items={products}/>)}
+              
+          </div>
+      </div>  
+      )
+  }
 
 
 export default ItemListContainer;
