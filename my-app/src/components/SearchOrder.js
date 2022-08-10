@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import CartItem from "../components/CartItem"
+import CartItem from "./CartItem"
 import { useParams, Link } from "react-router-dom";
 import { getOrderById } from '../firebase.js';
 import PropagateLoader from "react-spinners/ClipLoader";
@@ -24,7 +24,7 @@ function OrderById() {
 
     <section>
 
-      <h2 className='mt-3 text-center text-sm'>Example Orders you can search: </h2>
+      
 
       {loading ? <div className="mt-10 flex justify-center">
         <PropagateLoader color={"192BD1"} loading={loading} size={50} />

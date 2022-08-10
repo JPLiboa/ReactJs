@@ -39,7 +39,7 @@ function ItemDetail ({item}) {
                 <p className='text-center justify-center m-auto text-xl  p-20 font-italic'>Precio ${item.price}</p>
                 <hr></hr>
                 <div className='flex flex-col'>
-                    {sendStatus ? <NavLink to = "/card" className="btn btn-primary bg-info w-24 mx-auto">Ver Carrito</NavLink> : <div className="card-actions justify-center"><ItemCount stock = {5} initial = {1} onAdd ={(n) => onAddEvent(n)}/></div>}
+                    {sendStatus ? <NavLink to = "./cart" className="btn btn-primary bg-info w-24 mx-auto">Ver Carrito</NavLink> : <div className="card-actions justify-center"><ItemCount stock = {5} initial = {1} onAdd ={(n) => onAddEvent(n)}/></div>}
                     <div></div>
                     <Link to={"/"}><button className="btn btn-accent w-24 my-5 btn btn-secondary btn-sm">Volver</button></Link>
                 </div>

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ItemCount from './ItemCount';
 import ItemList from './ItemList';
-import Item from './Item';
 import {useParams } from "react-router-dom";
 import { getItems, getItemsFiltered } from '../firebase.js';
 import PropagateLoader from "react-spinners/ClipLoader";
@@ -24,16 +22,7 @@ const ItemListContainer = () => {
         setTimeout(setLoading,2000,false);
       });
     }, [nombreCategoria]);
-    /*fetch(nombreCategoria === undefined ? 'https://fakestoreapi.com/products' : 'https://fakestoreapi.com/products/category/'+ nombreCategoria )
-          .then((res) => res.json())
-          .then((json) => {
-            setTimeout(setLoading,2000,false);
-            setProducts(json);
-          })
-          .catch(() => {
-            alert('Ocurrio un error');
-          });
-      }, [products]);*/
+    
 
       return (
         <div className="mt-10 flex justify-center">

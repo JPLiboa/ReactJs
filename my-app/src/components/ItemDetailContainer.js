@@ -1,30 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import {useParams} from "react-router-dom";
-import ItemDetail from "./ItemDetail";
-import {getDetailItem } from "../firebase.js";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail"
+import { getDetailItem } from '../firebase.js';
 import ClipLoader from "react-spinners/ClipLoader";
 
-
-
-
 const ItemDetailContainer = () => {
-  let {Item} = useParams ();
-  const [data, setData]= useState ([]);
-  const[loading, setLoading] = useState (true);
 
-  useEffect(()=> {
+  let { Item } = useParams();
+
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
     getDetailItem(Item).then((snapshot) => {
       setData(snapshot.data())
       setTimeout(setLoading, 2000, false)
     })
   }, [Item]);
- /* fetch('https://fakestoreapi.com/products/'+ Item)
-  .then((res) => res.json())
-  .then((json) => {
-    setData(json);
-    setTimeout(setLoading,2000,false);
-  })}, [Item]);*/
-
 
   return (<div className="mt-10 flex justify-center">
     {loading ? 
@@ -35,4 +27,5 @@ const ItemDetailContainer = () => {
   </div>
   )
 }
-export default ItemDetailContainer
+
+export default ItemDetailContainer;

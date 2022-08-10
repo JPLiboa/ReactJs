@@ -42,18 +42,15 @@ export const getItemsFiltered = (categ) => {
     return getDocs(q);
   };
 
-  /*export const sendOrder = (items,total) => {
-    const order = {
-      buyer: {name: "Juan", phone: "+54114856987", email: "liboajp@gmail.com"},
-      items,
-      total
-    }
-    const ordersCollection = collection(db,"orders")
-    addDoc(ordersCollection, order).then(({id}) => console.log(id));
-  }*/
-
+  
   export const getOrderById = (id) => {
     const docRef = doc(db, 'orders', id) 
     return getDoc(docRef);
   };
 
+  /*export const getAllProducts = async () => {
+    const itemCollection = collection (db, "items");
+    const q = query (itemCollection);
+    return await getDocs (q); 
+  }
+*/

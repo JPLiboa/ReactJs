@@ -33,7 +33,7 @@ function Cart() {
 
         {cart.length > 0 ? 
         <div className='d-grid gap-2 d-md-block'>
-          <Link to="../checkout">
+          <Link to="./checkout">
               <button className="btn btn-info btn-block w-48 mr-10">Continuar compra</button>
             </Link>
             <button className="btn btn-danger w-48" onClick={clearAll}>Vaciar</button>
@@ -42,7 +42,7 @@ function Cart() {
           :
           <div>
             <h1 className='mb-10'>EMPTY CART</h1>
-            <Link to="../">
+            <Link to="/">
               <button className="btn btn-primary btn-block w-48">VIEW PRODUCTS</button>
             </Link>
           </div>

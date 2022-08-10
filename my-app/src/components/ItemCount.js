@@ -22,7 +22,8 @@ function ItemCount  ({stock, initial, onAdd}) {
       <button className="btn btn-circle bg-info btn-sm border border-dark" onClick={() => decrementar()}>-</button>
     </div>
     <div className="card-actions justify-center">
-      <button className="btn btn-dark bg-info w-9/12 border border-dark" onClick={() => onAdd(count)}>Agregar Al Carrito</button>
+      <button 
+      className="btn btn-dark bg-info w-9/12 border border-dark" onClick={() => onAdd(count)}>Agregar Al Carrito</button>
     </div>
   </div>
   
