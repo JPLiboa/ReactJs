@@ -31,7 +31,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order/:OrderId" element={<OrderById />} />
       </Routes>
-        <div className='card text-center'> JP Store  - RRHH </div>
+        <div className='card text-center lead'> JP Store </div>
     
     </CartProvider>
     </BrowserRouter>

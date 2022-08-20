@@ -15,8 +15,8 @@ function ItemCount  ({stock, initial, onAdd}) {
       return (count, decrementar)
     };
   return (
-    <div className="w-64">
-    <div className="card-actions justify-around items-center mb-4 ">
+    <div className="w-64" >
+    <div className="card-actions justify-around items-center mb-4 " width="150">
       <button className="btn btn-circle bg-info btn-sm border border-dark" onClick={() => incrementar()}>+</button>
       <p className="font-bold text-2xl text-center lead d-inline p-2 text-bg-primary w-25 p-4 ">{count}</p>
       <button className="btn btn-circle bg-info btn-sm border border-dark" onClick={() => decrementar()}>-</button>

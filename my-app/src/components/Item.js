@@ -6,7 +6,7 @@ const Item = ({ id,title,description,price,image}) => {
   return (
    
    
-    <div class="container text-center">
+    <div class="container text-center shadow-lg p-3 mb-5 bg-body rounded ">
     <div className='row justify-content-md-center'>
     <div className='col'>
     <div className="card w-10 box-shadow-xl text-center">

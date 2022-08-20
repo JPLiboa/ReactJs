@@ -55,10 +55,12 @@ function Checkout() {
     <section>
 
       {cart.length > 0 &&
-        <div className="flex mx-auto w-8/12 mt-10 mb-10 font-bold">
-          <div className="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center shadow-xl">Productos en Carrito: {totalItems}</div>
-          <div className="divider divider-horizontal"></div>
-          <div className="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center shadow-xl">TOTAL ${totalPrice}</div>
+        <div className="card-center w-25" >
+          <div className="list-group list-group-flush">
+          <div className="card-header text-center">Productos en Carrito: {totalItems}</div>
+          
+          <div className="card-header text-center">TOTAL ${totalPrice}</div>
+          </div>
         </div>}
 
       <div className='mt-10 text-center'>
